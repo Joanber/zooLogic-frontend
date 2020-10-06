@@ -1,0 +1,43 @@
+.carousel-img {
+  width: auto;
+  height: 460px;
+}
+
+@media (max-width: 768px) {
+  .carousel-img {
+    height: 260px;
+  }
+}
+
+.tomate {
+  color: #76d610 !important;
+}
+
+.open {
+  font-family: "Open Sans", sans-serif;
+}
+
+#carousel-control-next-icon:hover {
+  background: #76d610 !important;
+}
+
+.fa-lg {
+  font-size: 50px;
+}
+
+.card {
+  cursor: pointer;
+}
+
+.card:hover {
+  background: #76d610 !important;
+}
+
+.card-img-top {
+  width: auto;
+  height: 220px;
+}
+
+button:hover {
+  background-color: white;
+}

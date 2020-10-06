@@ -1,0 +1,255 @@
+<div class="container my-3">
+  <div class="row justify-content-center">
+    <h1>Registrarse</h1>
+    <button
+      class="btn bg-pri text-white pull-right mb-2 mx-3"
+      (click)="cancelar()"
+    >
+      <i class="fas fa-window-close"></i>
+    </button>
+  </div>
+
+  <div class="row">
+    <div class="col-12 text-center">
+      <p class="text-danger" *ngFor="let error of erroresServer">{{ error }}</p>
+      <button
+        (click)="ocultarErrores()"
+        class="btn btn-info"
+        *ngIf="erroresServer.length > 0"
+      >
+        Ok
+      </button>
+    </div>
+  </div>
+
+  <form class="border shadow rounded mx-5" role="form" #MyForm="ngForm">
+    <hr class="separador-pri w-100" />
+    <div class="form-row">
+      <div class="col-md-5 mb-3 mx-auto">
+        <label for="identificacion">Identificacion:</label>
+        <input
+          required
+          class="form-control"
+          type="text"
+          name="identificacion"
+          placeholder="Identificacion"
+          #identificacion="ngModel"
+          [(ngModel)]="cliente.identificacion"
+        />
+        <div class="text-center">
+          <p
+            class="input-err-12"
+            *ngIf="
+              identificacion.hasError('required') && identificacion.touched
+            "
+          >
+            Campo requerido!
+          </p>
+        </div>
+      </div>
+      <div class="col-md-5 mx-auto"></div>
+    </div>
+
+    <div class="form-row">
+      <div class="col-md-5 mb-3 mx-auto">
+        <label for="inlineFormInputGroup">Username:</label>
+        <div class="input-group">
+          <div class="input-group-prepend">
+            <div class="input-group-text">@</div>
+          </div>
+          <input
+            required
+            type="text"
+            class="form-control"
+            id="inlineFormInputGroup"
+            placeholder="Username"
+            name="username"
+            #username="ngModel"
+            [(ngModel)]="cliente.username"
+          />
+        </div>
+        <div class="text-center">
+          <p
+            class="input-err-12"
+            *ngIf="username.hasError('required') && username.touched"
+          >
+            Campo requerido!
+          </p>
+        </div>
+      </div>
+
+      <div class="col-md-5 mb-3 mx-auto">
+        <label for="">Password:</label>
+        <input
+          required
+          class="form-control"
+          type="password"
+          name="password"
+          placeholder="Password"
+          #password="ngModel"
+          [(ngModel)]="cliente.password"
+        />
+        <div class="text-center">
+          <p
+            class="input-err-12"
+            *ngIf="password.hasError('required') && password.touched"
+          >
+            Campo requerido!
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div class="form-row">
+      <div class="col-md-5 mb-3 mx-auto">
+        <label for="">Primer Nombre:</label>
+        <input
+          required
+          class="form-control"
+          type="text"
+          name="primer_nombre"
+          placeholder="Primer Nombre"
+          #primer_nombre="ngModel"
+          [(ngModel)]="cliente.primer_nombre"
+        />
+        <div class="text-center">
+          <p
+            class="input-err-12"
+            *ngIf="primer_nombre.hasError('required') && primer_nombre.touched"
+          >
+            Campo requerido!
+          </p>
+        </div>
+      </div>
+      <div class="col-md-5 mb-3 mx-auto">
+        <label for="">Segundo Nombre:</label>
+        <input
+          required
+          class="form-control"
+          type="text"
+          name="segundo_nombre"
+          placeholder="Segundo Nombre"
+          #segundo_nombre="ngModel"
+          [(ngModel)]="cliente.segundo_nombre"
+        />
+      </div>
+    </div>
+    <div class="form-row">
+      <div class="col-md-5 mb-3 mx-auto">
+        <label for="">Primer Apellido:</label>
+        <input
+          required
+          class="form-control"
+          type="text"
+          name="primer_apellido"
+          placeholder="Primer Apellido"
+          #primer_apellido="ngModel"
+          [(ngModel)]="cliente.primer_apellido"
+        />
+        <div class="text-center">
+          <p
+            class="input-err-12"
+            *ngIf="
+              primer_apellido.hasError('required') && primer_apellido.touched
+            "
+          >
+            Campo requerido!
+          </p>
+        </div>
+      </div>
+      <div class="col-md-5 mb-3 mx-auto">
+        <label for="">Segundo Apellido:</label>
+        <input
+          required
+          class="form-control"
+          type="text"
+          name="segundo_apellido"
+          placeholder="Segundo Apellido"
+          #segundo_apellido="ngModel"
+          [(ngModel)]="cliente.segundo_apellido"
+        />
+      </div>
+    </div>
+    <div class="form-row">
+      <div class="col-md-5 mb-3 mx-auto">
+        <label for="">Correo:</label>
+        <input
+          required
+          class="form-control"
+          type="email"
+          name="correo"
+          placeholder="Correo"
+          #correo="ngModel"
+          [(ngModel)]="cliente.correo"
+        />
+        <div class="text-center">
+          <p
+            class="input-err-12"
+            *ngIf="correo.hasError('required') && correo.touched"
+          >
+            Campo requerido!
+          </p>
+        </div>
+      </div>
+      <div class="col-md-5 mb-3 mx-auto">
+        <label for="">Telefono:</label>
+        <input
+          required
+          class="form-control"
+          type="text"
+          name="telefono"
+          placeholder="Telefono"
+          #telefono="ngModel"
+          [(ngModel)]="cliente.telefono"
+        />
+      </div>
+    </div>
+    <div class="form-row">
+      <div class="col-md-5 mb-3 mx-auto">
+        <label for="">Fecha Nacimiento:</label>
+        <input
+          class="form-control"
+          type="date"
+          name="fecha_nacimeinto"
+          placeholder="Fecha Nacimiento"
+          #fecha_nacimeinto="ngModel"
+          [(ngModel)]="cliente.fecha_nacimeinto"
+        />
+        <div class="text-center">
+          <p
+            class="input-err-12"
+            *ngIf="
+              fecha_nacimeinto.hasError('required') && fecha_nacimeinto.touched
+            "
+          >
+            Campo requerido!
+          </p>
+        </div>
+      </div>
+      <div class="col-md-5 mb-3 mx-auto">
+        <label for="">Direccion:</label>
+        <input
+          required
+          class="form-control"
+          type="text"
+          name="direccion"
+          placeholder="Direccion"
+          #direccion="ngModel"
+          [(ngModel)]="cliente.direccion"
+        />
+      </div>
+    </div>
+    <div class="form-row">
+      <hr class="separador-pri w-100" />
+      <div class="col-md-5 mx-auto">
+        <button
+          class="btn bg-pri btn-block text-white"
+          [disabled]="!MyForm.form.valid"
+          (click)="guardar()"
+        >
+          Registrar
+        </button>
+      </div>
+    </div>
+  </form>
+</div>

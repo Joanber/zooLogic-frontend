@@ -1,0 +1,17 @@
+.card-header {
+  background: #76d610;
+}
+
+.card ul li:hover {
+  color: white;
+  background: #108bd6;
+}
+
+.card-img-top {
+  width: auto;
+  height: 220px;
+}
+
+button:hover {
+  background-color: white;
+}

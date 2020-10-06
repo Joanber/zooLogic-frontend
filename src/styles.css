@@ -1,0 +1,19 @@
+/* You can add global styles to this file, and also import other style files */
+
+.separador-pri {
+  background-color: #34495e;
+  height: 3.5px;
+  border-radius: 5px;
+}
+
+.bg-pri {
+  background-color: #108bd6 !important;
+}
+
+.bg-tomate {
+  background-color: #76d610 !important;
+}
+
+.text-white {
+  color: white !important;
+}

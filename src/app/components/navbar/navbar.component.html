@@ -1,0 +1,87 @@
+<nav
+  class="navbar navbar-expand-lg bg-navbar white sticky-top shadow"
+  id="main"
+>
+  <div class="container">
+    <a class="navbar-brand">
+      <img
+        class="img-fluid"
+        src="../../../assets/img/zoologo2.png"
+        style="width: 110px; height: 50px"
+        alt="no hay imagen"
+    /></a>
+
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-toggle="collapse"
+      data-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
+      <i class="fas fa-stream" style="color: #76d610"></i>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto ml-2">
+        <li class="nav-item mx-0 mx-lg-1">
+          <a
+            class="nav-link py-2 px-0 px-lg-2"
+            routerLinkActive="active"
+            routerLink="/home"
+            >Inicio</a
+          >
+        </li>
+        <li class="nav-item mx-0 mx-lg-1">
+          <a
+            class="nav-link py-2 px-0 px-lg-2"
+            routerLink="/producto"
+            routerLinkActive="active"
+            >Productos</a
+          >
+        </li>
+        <li class="nav-item mx-0 mx-lg-1">
+          <a
+            class="nav-link py-2 px-0 px-lg-2"
+            routerLink="/servicios"
+            routerLinkActive="active"
+            >Servicios</a
+          >
+        </li>
+        <li class="nav-item mx-0 mx-lg-1">
+          <a
+            class="nav-link py-2 px-0 px-lg-2"
+            routerLink="/acercade"
+            routerLinkActive="active"
+            >Nosotros
+          </a>
+        </li>
+        <li class="nav-item mx-0 mx-lg-1">
+          <a
+            class="nav-link py-2 px-0 px-lg-2"
+            routerLink="/contactanos"
+            routerLinkActive="active"
+            >Contáctanos
+          </a>
+        </li>
+      </ul>
+      <a *ngIf="cliente"
+        >{{ cliente.primer_nombre }} {{ cliente.primer_apellido }}</a
+      >
+      <button
+        class="btn btn-outline-light ml-2"
+        (click)="cerrarSesion()"
+        *ngIf="cliente"
+      >
+        Cerrar Sesion
+      </button>
+      <a
+        class="nav-link text-light white font-weight-bold"
+        (click)="irLogin()"
+        *ngIf="!cliente"
+        >Registrarse</a
+      >
+    </div>
+  </div>
+</nav>

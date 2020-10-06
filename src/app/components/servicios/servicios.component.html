@@ -1,0 +1,29 @@
+<router-outlet></router-outlet>
+<div class="container mt-4">
+    <div class="row justify-content-center">
+        <h3 class="text-uppercase font-weight-bold ">Servicios</h3>
+        <hr class="separador-pri w-100">
+    </div>
+    <div class="row justify-content-center" *ngIf="loading">
+        <img src="../../../assets/img/cargando.gif" class="img-fluid " alt="... ">
+    </div>
+    <div class="row text-center">
+        <div *ngFor="let servicio of servicios" class="col-sm-6 col-md-4 col-lg-4 mb-3 ">
+
+            <div *ngFor="let f of servicio.fotos_servicio" class="card text-center mb-3 h-100 ">
+                <img [src]="f.foto" class="card-img-top img-fluid " alt="... ">
+
+                <div class="card-body ">
+                    <h5 class="card-title ">{{servicio.titulo}} </h5>
+                    <p class="card-text ">{{servicio.descripcion}} </p>
+
+                    <button type="button" class="btn bg-pri text-white btn-block" routerLink="/servicio/{{servicio.id}}">
+                                   Ver Detalles
+                    </button>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <hr class="separador-pri w-100 ">
+</div>

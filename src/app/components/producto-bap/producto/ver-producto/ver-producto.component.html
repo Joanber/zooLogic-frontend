@@ -1,0 +1,90 @@
+<div class="container mt-4">
+  <div class="row justify-content-center" *ngIf="cargando">
+    <img src="../../../assets/img/cargando.gif" class="img-fluid" alt="... " />
+  </div>
+  <div class="row justify-content-center" *ngIf="producto">
+    <h3 class="text-uppercase font-weight-bold">{{ producto.nombre }}</h3>
+    <hr class="separador-pri w-100" />
+  </div>
+  <div class="row" *ngIf="producto">
+    <div class="col-sm-4" *ngFor="let f of producto.fotos_producto">
+      <img [src]="f.foto" class="card-img-top" alt="foto" />
+      <br />
+      <br />
+      <button
+        type="button"
+        routerLink="/producto"
+        class="btn bg-pri text-white btn-block"
+      >
+        Regresar
+      </button>
+    </div>
+    <div class="col-sm-8" style="text-align: center">
+      <h6>Descripción</h6>
+      <p>{{ producto.descripcion }}</p>
+      <h6>Categoría</h6>
+      <p>{{ producto.categoria.nombre }}</p>
+      <h6>Precio</h6>
+      $ {{ producto.precio }}
+      <h6>Calificación</h6>
+      <form>
+        <p class="clasificacion">
+          <input id="radio1" type="radio" name="estrellas" value="5" />
+          <!--
+                  --><label for="radio1">★</label>
+          <!--
+                  --><input
+            id="radio2"
+            type="radio"
+            name="estrellas"
+            value="4"
+          />
+          <!--
+                  --><label for="radio2">★</label>
+          <!--
+                  --><input
+            id="radio3"
+            type="radio"
+            name="estrellas"
+            value="3"
+          />
+          <!--
+                  --><label for="radio3">★</label>
+          <!--
+                  --><input
+            id="radio4"
+            type="radio"
+            name="estrellas"
+            value="2"
+          />
+          <!--
+                  --><label for="radio4">★</label>
+          <!--
+                  --><input
+            id="radio5"
+            type="radio"
+            name="estrellas"
+            value="1"
+          />
+          <!--
+                  --><label for="radio5">★</label>
+        </p>
+      </form>
+      <a
+        target="_blank"
+        href="https://api.whatsapp.com/send?phone=59398 392 9452&text=Hola,%20¿ZooLogic%20necesito%20información?"
+      >
+        <p>
+          <img
+            class="img-fluid"
+            src="../../../assets/img/what.png"
+            style="width: 60px; height: 50px"
+            alt="no hay imagen"
+          />
+          Solicitar Información
+        </p>
+      </a>
+    </div>
+  </div>
+  <hr class="separador-pri w-100" />
+</div>

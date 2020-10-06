@@ -1,0 +1,35 @@
+<div class="container mt-4">
+    <div class="row justify-content-center">
+        <h3 class="text-uppercase font-weight-bold ">Adquirir Servicio</h3>
+        <hr class="separador-pri w-100">
+    </div>
+    <div class="row justify-content-center" *ngIf="loading">
+        <img src="../../../assets/img/cargando.gif" class="img-fluid " alt="... ">
+    </div>
+
+    <div class="row justify-content-center">
+        <div class="col-md-6 ">
+
+            <div class="card text-center  " *ngFor="let foto of fotos">
+                <img src="{{foto.foto}} " class="card-img-top img-fluid " alt="... ">
+
+                <div class="card-body ">
+                    <h5 class="card-title ">{{servicio.titulo}} </h5>
+                    <p class="card-text ">{{servicio.descripcion}} </p>
+                    <strong> <p class="card-text">Desde:  ${{servicio.precio}} </p></strong>
+
+                    <p><strong>Si adquiere este servicio tendra un descuento de: {{servicio.descuento}}%</strong> </p>
+                    <p>
+                        <Strong>Adquierlo y visita nuestro Local para tu descuento!</Strong>
+                    </p>
+                    <button type="button" class="btn bg-pri text-white btn-block">
+                                   Adquirir Servicio
+                                </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <hr class="separador-pri w-100 ">
+</div>
