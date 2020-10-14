@@ -52,56 +52,6 @@
 
     <div class="form-row">
       <div class="col-md-5 mb-3 mx-auto">
-        <label for="inlineFormInputGroup">Username:</label>
-        <div class="input-group">
-          <div class="input-group-prepend">
-            <div class="input-group-text">@</div>
-          </div>
-          <input
-            required
-            type="text"
-            class="form-control"
-            id="inlineFormInputGroup"
-            placeholder="Username"
-            name="username"
-            #username="ngModel"
-            [(ngModel)]="cliente.username"
-          />
-        </div>
-        <div class="text-center">
-          <p
-            class="input-err-12"
-            *ngIf="username.hasError('required') && username.touched"
-          >
-            Campo requerido!
-          </p>
-        </div>
-      </div>
-
-      <div class="col-md-5 mb-3 mx-auto">
-        <label for="">Password:</label>
-        <input
-          required
-          class="form-control"
-          type="password"
-          name="password"
-          placeholder="Password"
-          #password="ngModel"
-          [(ngModel)]="cliente.password"
-        />
-        <div class="text-center">
-          <p
-            class="input-err-12"
-            *ngIf="password.hasError('required') && password.touched"
-          >
-            Campo requerido!
-          </p>
-        </div>
-      </div>
-    </div>
-
-    <div class="form-row">
-      <div class="col-md-5 mb-3 mx-auto">
         <label for="">Primer Nombre:</label>
         <input
           required

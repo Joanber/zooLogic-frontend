@@ -4,7 +4,8 @@
 
 .card ul li:hover {
   color: white;
-  background: #108bd6;
+  background: black;
+  cursor: pointer;
 }
 
 .card-img-top {

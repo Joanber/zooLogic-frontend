@@ -10,30 +10,22 @@ import { ClientesService } from "../../../servicios/clientes.service";
 })
 export class ClienteFormComponent implements OnInit {
   public cliente: Cliente = {
-    identificacion: "0102",
-    primer_nombre: "sdfads",
-    segundo_nombre: "dsadsf",
-    primer_apellido: "adsfasdf",
-    segundo_apellido: "sdaadf",
+    identificacion: "0106385064",
+    primer_nombre: "ROLANDO",
+    segundo_nombre: "PAUL",
+    primer_apellido: "TACURI",
+    segundo_apellido: "GUEVARA",
     fecha_nacimeinto: null,
-    correo: "asdfasdf@sdfasd.com",
-    telefono: "asdfasd",
-    direccion: "adsfads",
-    username: "adsfads",
-    password: "asdfa",
+    correo: "rolandoguevara@gmail.com",
+    telefono: "4060058",
+    direccion: "Av Americas y Cayambe",
   };
 
   public erroresServer = [];
 
   constructor(private router: Router, private clienteSrv: ClientesService) {}
 
-  ngOnInit() {
-    const user = localStorage.getItem("user");
-
-    if (user) {
-      window.location.href = "";
-    }
-  }
+  ngOnInit() {}
   cancelar() {
     this.router.navigate([""]);
   }
@@ -44,12 +36,8 @@ export class ClienteFormComponent implements OnInit {
     try {
       this.cliente.fecha_nacimeinto = new Date(this.cliente.fecha_nacimeinto);
       const respuesta = await this.clienteSrv.registrarCliente(this.cliente);
-      localStorage.setItem("user", JSON.stringify(respuesta));
-      if (respuesta) {
-        window.location.reload();
-      } else {
-        alert("ERROR");
-      }
+      window.alert("USUARIO REGISTRADO CORRECTAMENTE");
+      this.cancelar();
     } catch (error) {
       this.erroresServer = Object.entries(error.error).map((value) => value[1]);
     }

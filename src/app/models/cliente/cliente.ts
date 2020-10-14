@@ -10,7 +10,4 @@ export class Cliente {
   correo?: string;
   telefono?: string;
   direccion?: string;
-  username?: string;
-  password?: string;
-  servicio?: Servicio;
 }

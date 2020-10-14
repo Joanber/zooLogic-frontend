@@ -12,14 +12,4 @@ export class ClientesService {
   public async registrarCliente(cliente: Cliente): Promise<Cliente> {
     return this.http.post<Cliente>(this.url, cliente).toPromise();
   }
-  public async iniciarSesion(
-    username: string,
-    password: string
-  ): Promise<Cliente[] | []> {
-    return await this.http
-      .get<Cliente[] | []>(
-        `${this.url}?username=${username}&password=${password}`
-      )
-      .toPromise();
-  }
 }

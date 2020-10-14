@@ -66,20 +66,11 @@
           </a>
         </li>
       </ul>
-      <a *ngIf="cliente"
-        >{{ cliente.primer_nombre }} {{ cliente.primer_apellido }}</a
-      >
-      <button
-        class="btn btn-outline-light ml-2"
-        (click)="cerrarSesion()"
-        *ngIf="cliente"
-      >
-        Cerrar Sesion
-      </button>
+
       <a
         class="nav-link text-light white font-weight-bold"
-        (click)="irLogin()"
-        *ngIf="!cliente"
+        routerLink="/registrarse"
+        routerLinkActive="active"
         >Registrarse</a
       >
     </div>
